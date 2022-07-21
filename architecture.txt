@@ -1,0 +1,86 @@
+---------------------AUTH---------------------
+POST:
+    /auth/login
+        input:
+            1. user_phone      (required)
+            2. user_password   (required)
+        output: 
+            token:
+                1. user_id
+                2. user_role
+
+POST
+    /register
+        input:
+            1. user_first_name      (required)
+            2. user_last_name
+            3. user_phone           (required)
+            4. user_password        (required)
+        output:
+            token:
+                1. user_id
+                2. user_role
+---------------------AUTH END---------------------
+
+
+
+
+---------------------USERS---------------------
+GET:
+    /users
+        input:
+            1. first_name
+            2. last_name
+            3. user_phone
+            4. user_password
+            5. user_profile_image
+            6. user_verified
+        output:
+            1. user
+
+GET_ONE:
+    /users/:user_id
+        input:
+            1. first_name
+            2. last_name
+            3. user_phone
+            4. user_password
+            5. user_profile_image
+            6. user_verified
+        output:
+            1. user
+
+POST :
+    /users
+        input:
+            1. first_name           (required)
+            2. last_name
+            3. user_phone           (required)
+            4. user_password        (required)
+            5. user_profile_image   (required)
+            6. user_verified        (default false)
+        output:
+            user
+
+PUT :
+    /users
+        input:
+            1. user_id              (required)
+            2. first_name       
+            3. last_name
+            4. user_phone           (not allowed!) 
+            5. user_password    
+            6. user_profile_image   
+            7. user_verified        (default false)
+        output:
+            user
+
+
+DELETE :
+    /users
+        input:
+            1. user_id          (required)
+        output:
+            user
+
+---------------------USERS END---------------------
